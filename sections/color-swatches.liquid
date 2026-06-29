@@ -1,0 +1,27 @@
+{% assign colors = "Coastal Sand:#E6D5B8,Limestone Cream:#F0EAD6,Desert Beige:#D2B48C,Warm Taupe:#B38B6D,Prairie Buff:#CDBA96,Honey Quartz:#DAA520,Canyon Gold:#B8860B,Sierra Tan:#A0522D,River Pebble:#8F9779,Driftwood Gray:#A9A9A9" | split: "," %}
+
+<section class="section" data-section-id="{{ section.id }}">
+  <h2 class="section-title">{{ section.settings.title | default: '20 Color Options' }}</h2>
+  <p class="section-subtitle">{{ section.settings.subtitle | default: 'Carefully curated for American outdoor living spaces' }}</p>
+  <div class="color-circles" style="max-width:700px;margin:0 auto">
+    {% for color in colors %}
+      {% assign parts = color | split: ":" %}
+      <div class="color-circle-item">
+        <div class="color-circle" style="background:{{ parts[1] }}"></div>
+        <span class="color-circle-name">{{ parts[0] }}</span>
+      </div>
+    {% endfor %}
+  </div>
+  <p class="color-circle-more">+ 10 more premium blends included in the box.</p>
+</section>
+
+{% schema %}
+{
+  "name": "Color Swatches",
+  "settings": [
+    {"type": "text", "id": "title", "label": "Title", "default": "20 Color Options"},
+    {"type": "text", "id": "subtitle", "label": "Subtitle", "default": "Carefully curated for American outdoor living spaces"}
+  ],
+  "presets": [{"name": "Color Swatches"}]
+}
+{% endschema %}

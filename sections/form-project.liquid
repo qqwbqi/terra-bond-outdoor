@@ -1,0 +1,49 @@
+<section class="section section-bg-sand" data-section-id="{{ section.id }}">
+  <div class="text-center mb-10">
+    <h1 class="section-title" style="margin-bottom:16px">Request Bulk Quote / Project Estimate</h1>
+    <p class="section-subtitle" style="margin-bottom:0">Ready to transform your outdoor space? Provide your project details below, and our team will calculate materials, freight shipping, and provide a custom quote.</p>
+  </div>
+
+  <div class="form-card form-card-lg">
+    <form data-success="Estimate request submitted successfully!">
+      <div class="form-row">
+        <div class="form-group"><label>First & Last Name *</label><input type="text" required placeholder="John Doe"></div>
+        <div class="form-group"><label>Email Address *</label><input type="email" required placeholder="john@example.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>City & State *</label><input type="text" required placeholder="e.g., Austin, TX"></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(555) 123-4567"></div>
+      </div>
+
+      <div class="form-divider">
+        <h3>Project Details</h3>
+        <div class="form-row">
+          <div class="form-group"><label>Project Type *</label><select><option>Patio Makeover</option><option>Pool Deck</option><option>Garden Path / Walkway</option><option>Front Yard Entry</option><option>Other</option></select></div>
+          <div class="form-group"><label>Approximate Area (sq ft) *</label><input type="number" required placeholder="e.g., 400"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Current Surface Type *</label><select><option>Concrete (Good Condition)</option><option>Concrete (Cracked/Damaged)</option><option>Pavers / Bricks</option><option>Dirt / Grass (Requires Sub-base)</option></select></div>
+          <div class="form-group"><label>Do You Have an Installer? *</label><select><option>Yes, I have a contractor</option><option>No, planning to DIY</option><option>No, looking for recommendations</option></select></div>
+        </div>
+        <div class="form-group">
+          <label>Upload Project Photos</label>
+          <div class="upload-zone">
+            <span class="label">Click to upload or drag & drop</span>
+            <p class="hint">Upload photos of your current patio/deck space for accurate quoting.</p>
+          </div>
+        </div>
+        <div class="form-group"><label>Additional Details</label><textarea rows="4" placeholder="Tell us about your timeline, budget, or any specific requirements..."></textarea></div>
+      </div>
+
+      <p class="text-sm opacity-70 mb-6" style="color:var(--color-text)">* Final results depend on base condition, weather, mixing, and installation quality. For larger projects, consult a qualified installer.</p>
+      <button type="submit" class="btn btn-dark btn-lg" style="width:100%">Submit for Bulk Quote</button>
+    </form>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Project Estimate Form",
+  "presets": [{"name": "Project Estimate Form"}]
+}
+{% endschema %}
