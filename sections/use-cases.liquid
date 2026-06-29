@@ -1,0 +1,33 @@
+<section class="section" data-section-id="{{ section.id }}">
+  <div class="two-col">
+    <div>
+      <img src="{{ section.settings.image | default: 'https://images.unsplash.com/photo-1595841697258-00fc4884c785?w=800&q=80' }}" alt="Beautiful patio" />
+    </div>
+    <div>
+      <h2>{{ section.settings.title | default: 'Professional Finish, Accessible Materials' }}</h2>
+      <p>{{ section.settings.text | default: 'Whether you are a homeowner looking to refresh an old concrete patio, or a professional contractor sourcing premium resin-bound stone, we have the right program for you.' }}</p>
+      <ul class="feature-list">
+        <li><i data-lucide="star" style="width:20px;height:20px"></i> <span><strong>For Homeowners:</strong> Test our $39.99 DIY 1 sq ft kit for small repairs, or order bulk materials for large makeovers.</span></li>
+        <li><i data-lucide="star" style="width:20px;height:20px"></i> <span><strong>For Contractors & Dealers:</strong> Join our Dealer Program for wholesale pricing, sample boxes, and project lead referrals.</span></li>
+      </ul>
+      <a href="{{ section.settings.link | default: '/dealer-program.html' }}" class="btn btn-link mt-6">
+        {{ section.settings.button_text | default: 'Apply for Dealer Pricing' }}
+        <i data-lucide="chevron-right" style="width:20px;height:20px"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Use Cases (Two Column)",
+  "settings": [
+    {"type": "image_picker", "id": "image", "label": "Image"},
+    {"type": "text", "id": "title", "label": "Title", "default": "Professional Finish, Accessible Materials"},
+    {"type": "textarea", "id": "text", "label": "Text", "default": "Whether you are a homeowner..."},
+    {"type": "url", "id": "link", "label": "Link", "default": "/dealer-program.html"},
+    {"type": "text", "id": "button_text", "label": "Button Text", "default": "Apply for Dealer Pricing"}
+  ],
+  "presets": [{"name": "Use Cases"}]
+}
+{% endschema %}

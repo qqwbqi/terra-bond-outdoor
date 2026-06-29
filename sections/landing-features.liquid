@@ -1,0 +1,16 @@
+<section class="section" data-section-id="{{ section.id }}">
+  <h2 class="section-title">{{ section.settings.title | default: 'Why Bonded Stone?' }}</h2>
+  <div class="card-grid" style="max-width:900px;margin:0 auto">
+    <div class="card text-center"><div class="card-icon" style="margin:0 auto 20px"><i data-lucide="gem" style="width:28px;height:28px"></i></div><h3>Natural Stone Look</h3><p>Real stone texture without gaps and shifting.</p></div>
+    <div class="card text-center"><div class="card-icon" style="margin:0 auto 20px"><i data-lucide="lock" style="width:28px;height:28px"></i></div><h3>No Loose Gravel</h3><p>Bonded stone stays in place. No tracking stones into the house.</p></div>
+    <div class="card text-center"><div class="card-icon" style="margin:0 auto 20px"><i data-lucide="sun" style="width:28px;height:28px"></i></div><h3>Weather Resistant</h3><p>Designed for outdoor conditions.</p></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Features",
+  "settings": [{"type": "text", "id": "title", "label": "Title", "default": "Why Bonded Stone?"}],
+  "presets": [{"name": "Landing Features"}]
+}
+{% endschema %}

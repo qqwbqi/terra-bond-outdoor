@@ -1,0 +1,16 @@
+<section class="section section-bg-white" data-section-id="{{ section.id }}">
+  <h2 class="section-title">{{ section.settings.title | default: 'How It Works' }}</h2>
+  <div class="step-list" style="max-width:700px;margin:0 auto">
+    <div class="step-item"><h4>Order Your Sample Kit</h4><p>Get 20 real cured stone samples delivered to your door. $14.99 with 7–12 day shipping.</p></div>
+    <div class="step-item"><h4>Compare in Your Space</h4><p>Test colors in morning, afternoon, and evening light.</p></div>
+    <div class="step-item"><h4>Request a Bulk Quote</h4><p>Upload your project dimensions and photos for a custom material quote.</p></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Landing Steps",
+  "settings": [{"type": "text", "id": "title", "label": "Title", "default": "How It Works"}],
+  "presets": [{"name": "Landing Steps"}]
+}
+{% endschema %}

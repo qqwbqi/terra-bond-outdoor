@@ -1,0 +1,46 @@
+<section class="section section-bg-sand" data-section-id="{{ section.id }}">
+  <div class="text-center">
+    <h2 class="section-title">{{ section.settings.title | default: 'The Smart Way to Upgrade Your Outdoor Space' }}</h2>
+  </div>
+  <div class="card-grid" style="max-width:1100px;margin:0 auto">
+    {% for block in section.blocks %}
+      <div class="card text-center" {{ block.shopify_attributes }}>
+        <div class="card-icon" style="margin:0 auto 20px">
+          {{ block.settings.icon | default: '📋' }}
+        </div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+    {% if section.blocks.size == 0 %}
+      <div class="card text-center">
+        <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="file-text" style="width:28px;height:28px"></i></div>
+        <h3>1. Order Sample Kit</h3>
+        <p>Get 20 real cured stone samples delivered to your door. Compare colors in your actual outdoor lighting.</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="check-circle-2" style="width:28px;height:28px"></i></div>
+        <h3>2. Plan Your Project</h3>
+        <p>Measure your patio, pool deck, or garden path. Take a few photos of the current surface.</p>
+      </div>
+      <div class="card text-center">
+        <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="truck" style="width:28px;height:28px"></i></div>
+        <h3>3. Request Bulk Quote</h3>
+        <p>Submit your project details. We provide a custom bulk material quote with freight shipping.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [{"type": "text", "id": "title", "label": "Title", "default": "The Smart Way to Upgrade Your Outdoor Space"}],
+  "blocks": [{"type": "step", "name": "Step", "settings": [
+    {"type": "text", "id": "icon", "label": "Icon", "default": "📋"},
+    {"type": "text", "id": "title", "label": "Title"},
+    {"type": "textarea", "id": "text", "label": "Text"}
+  ]}],
+  "presets": [{"name": "How It Works"}]
+}
+{% endschema %}

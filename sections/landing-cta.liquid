@@ -1,0 +1,19 @@
+<section class="section text-center" data-section-id="{{ section.id }}">
+  <h2 class="section-title">{{ section.settings.title | default: 'Ready to Start?' }}</h2>
+  <a href="{{ section.settings.button_link_1 | default: '/sample-kit.html' }}" class="btn btn-primary btn-lg" style="margin-right:12px">{{ section.settings.button_text_1 | default: 'Order Sample Kit — $14.99' }}</a>
+  <a href="{{ section.settings.button_link_2 | default: '/project-estimate.html' }}" class="btn btn-secondary btn-lg">{{ section.settings.button_text_2 | default: 'Request Bulk Quote' }}</a>
+</section>
+
+{% schema %}
+{
+  "name": "Landing CTA",
+  "settings": [
+    {"type": "text", "id": "title", "label": "Title", "default": "Ready to Start?"},
+    {"type": "text", "id": "button_text_1", "label": "Button 1 Text", "default": "Order Sample Kit — $14.99"},
+    {"type": "url", "id": "button_link_1", "label": "Button 1 Link", "default": "/sample-kit.html"},
+    {"type": "text", "id": "button_text_2", "label": "Button 2 Text", "default": "Request Bulk Quote"},
+    {"type": "url", "id": "button_link_2", "label": "Button 2 Link", "default": "/project-estimate.html"}
+  ],
+  "presets": [{"name": "Landing CTA"}]
+}
+{% endschema %>

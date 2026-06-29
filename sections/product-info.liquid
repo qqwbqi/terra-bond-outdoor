@@ -1,0 +1,61 @@
+<section class="product-grid" data-section-id="{{ section.id }}">
+  <div class="product-gallery">
+    <div class="product-main-image" style="background-image:url('https://images.unsplash.com/photo-1622372738982-bdf473216834?w=800&q=80')">
+      <div class="overlay-text">
+        <span style="font-size:20px;font-weight:700;display:block">20-Color Sample Kit</span>
+        <span style="font-size:14px;opacity:0.9">White Background Hero Image</span>
+      </div>
+    </div>
+    <div class="product-thumbnails">
+      <div class="product-thumb active"><img src="https://images.unsplash.com/photo-1622372738982-bdf473216834?w=200&q=80" alt=""></div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200&q=80" alt=""></div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1595841697258-00fc4884c785?w=200&q=80" alt=""></div>
+      <div class="product-thumb"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=200&q=80" alt=""></div>
+    </div>
+  </div>
+
+  <div class="product-info">
+    <div class="product-rating">
+      <div class="stars"><i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i><i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i></div>
+      <span class="reviews">(124 Reviews)</span>
+    </div>
+    <h1>20-Color Bonded Stone Surface Sample Kit</h1>
+    <div class="price">$14.99</div>
+    <p class="price-note">Compare real cured stone colors before planning your patio, pool deck, garden path, or front yard project. Includes our most popular natural blends from warm sands to modern grays.</p>
+
+    <div class="product-shipping-box">
+      <div class="item"><i data-lucide="truck" style="width:20px;height:20px"></i> <strong>Estimated delivery to the U.S.: 7–12 days</strong></div>
+      <div class="item"><i data-lucide="shield-check" style="width:20px;height:20px"></i> <span>Secure Checkout via Shopify</span></div>
+    </div>
+
+    <button class="btn btn-primary btn-lg" style="width:100%;margin-bottom:12px" data-add-to-cart data-product-name="20-Color Sample Kit" data-product-price="14.99">
+      <i data-lucide="shopping-cart" style="width:24px;height:24px"></i> Add to Cart — $14.99
+    </button>
+
+    <div class="product-disclaimer">
+      <strong>Disclaimer:</strong> Samples are for color and texture review only. Bulk material orders are quoted separately.
+    </div>
+
+    <div class="color-preview">
+      <h3>Includes 20 Designer Colors</h3>
+      {% assign colors = "Coastal Sand:#E6D5B8,Limestone Cream:#F0EAD6,Desert Beige:#D2B48C,Warm Taupe:#B38B6D,Prairie Buff:#CDBA96,Honey Quartz:#DAA520,Canyon Gold:#B8860B,Sierra Tan:#A0522D,River Pebble:#8F9779,Driftwood Gray:#A9A9A9" | split: "," %}
+      <div class="color-circles">
+        {% for color in colors %}
+          {% assign parts = color | split: ":" %}
+          <div class="color-circle-item">
+            <div class="color-circle" style="background:{{ parts[1] }}"></div>
+            <span class="color-circle-name">{{ parts[0] }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      <p class="color-circle-more">+ 10 more premium blends included in the box.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Info",
+  "presets": [{"name": "Product Info"}]
+}
+{% endschema %}

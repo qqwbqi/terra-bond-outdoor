@@ -1,0 +1,28 @@
+<section class="section" data-section-id="{{ section.id }}">
+  <h2 class="section-title">{{ section.settings.title | default: "What's Inside" }}</h2>
+  <div class="card-grid" style="max-width:900px;margin:0 auto">
+    <div class="card text-center">
+      <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="palette" style="width:28px;height:28px"></i></div>
+      <h3>20 Cured Color Samples</h3>
+      <p>Real bonded stone surface samples in 20 curated colors.</p>
+    </div>
+    <div class="card text-center">
+      <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="ruler" style="width:28px;height:28px"></i></div>
+      <h3>Size Reference</h3>
+      <p>Each sample is a cured bonded stone chip for easy comparison.</p>
+    </div>
+    <div class="card text-center">
+      <div class="card-icon" style="margin:0 auto 20px"><i data-lucide="package" style="width:28px;height:28px"></i></div>
+      <h3>Organized Sample Box</h3>
+      <p>Samples arrive in a labeled box with color names and recommended usage.</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Kit Contents",
+  "settings": [{"type": "text", "id": "title", "label": "Title", "default": "What's Inside"}],
+  "presets": [{"name": "Product Kit Contents"}]
+}
+{% endschema %}
