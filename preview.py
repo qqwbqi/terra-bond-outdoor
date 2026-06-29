@@ -61,6 +61,7 @@ class LiquidRenderer:
         ctx['linklists'] = MOCK_LINKLISTS
         ctx['settings'] = MOCK_SETTINGS
         ctx['routes'] = {'cart_url': '/cart.html'}
+        ctx['section'] = {'settings': {}, 'blocks': [], 'id': 'mock-section'}
         ctx['template'] = template_name.replace('/', '.')
         ctx['page_title'] = ctx.get('page', {}).get('title', 'TerraBond Outdoor')
         
@@ -82,6 +83,8 @@ class LiquidRenderer:
         layout_content = self.read_file(f'layout/{layout_name}.liquid')
         if not layout_content:
             return self.process_liquid(content_for_layout, ctx)
+        
+        layout_content = self.process_sections(layout_content, ctx)
         
         ctx['content_for_layout'] = self.process_liquid(content_for_layout, ctx)
         ctx['content_for_header'] = ''
@@ -205,6 +208,10 @@ class LiquidRenderer:
     
     def resolve_var(self, expr, ctx):
         expr = expr.strip()
+        # Handle quoted string literals directly
+        if (expr.startswith('"') and expr.endswith('"')) or (expr.startswith("'") and expr.endswith("'")):
+            return expr[1:-1]
+        
         if '|' in expr:
             parts = expr.split('|')
             value = self.resolve_var(parts[0].strip(), ctx)
@@ -225,8 +232,17 @@ class LiquidRenderer:
                         value = value.split(sep)
                 elif filter_expr == 'size':
                     value = len(value) if hasattr(value, '__len__') else 0
+                elif filter_expr == 'asset_url':
+                    value = f'/assets/{value}'
                 elif filter_expr.startswith('replace:'):
-                    pass
+                    args = filter_expr[8:].strip()
+                    # replace: '.', '-'
+                    arg_match = re.match(r"(.+),\s*(.+)", args)
+                    if arg_match:
+                        old = arg_match.group(1).strip().strip("'\"")
+                        new = arg_match.group(2).strip().strip("'\"")
+                        if isinstance(value, str):
+                            value = value.replace(old, new)
             return value
         
         if '.' in expr:

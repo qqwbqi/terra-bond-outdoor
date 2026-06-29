@@ -4,20 +4,20 @@
     {{ shop.name | default: 'TerraBond' }} <span>Outdoor</span>
   </a>
   
-  <div class="hidden md:flex items-center gap-8">
-    <a href="/index.html" class="font-medium hover:opacity-70 transition-opacity" style="color:var(--color-text)">Home</a>
-    <a href="/sample-kit.html" class="font-medium hover:opacity-70 transition-opacity" style="color:var(--color-primary)">Sample Kit</a>
-    <a href="/project-estimate.html" class="font-medium hover:opacity-70 transition-opacity" style="color:var(--color-text)">Project Estimate</a>
-    <a href="/dealer-program.html" class="font-medium hover:opacity-70 transition-opacity" style="color:var(--color-text)">Dealer Program</a>
+  <div class="nav-links-desktop" style="display:flex;gap:32px;align-items:center">
+    <a href="/index.html" style="font-size:15px;font-weight:500;color:var(--color-text);transition:color 0.2s" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text)'">Home</a>
+    <a href="/sample-kit.html" style="font-size:15px;font-weight:500;color:var(--color-primary);transition:color 0.2s">Sample Kit</a>
+    <a href="/project-estimate.html" style="font-size:15px;font-weight:500;color:var(--color-text);transition:color 0.2s" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text)'">Project Estimate</a>
+    <a href="/dealer-program.html" style="font-size:15px;font-weight:500;color:var(--color-text);transition:color 0.2s" onmouseover="this.style.color='var(--color-primary)'" onmouseout="this.style.color='var(--color-text)'">Dealer Program</a>
     
-    <button class="nav-cart-btn relative" aria-label="Open cart">
+    <button class="nav-cart-btn" aria-label="Open cart" style="position:relative">
       <i data-lucide="shopping-cart" style="width:24px;height:24px;color:var(--color-dark)"></i>
       <span class="cart-badge" style="display:none">0</span>
     </button>
   </div>
 
-  <div class="md:hidden flex items-center">
-    <button class="nav-cart-btn relative mr-2" aria-label="Open cart">
+  <div class="nav-links-mobile" style="display:none;align-items:center">
+    <button class="nav-cart-btn" aria-label="Open cart" style="position:relative;margin-right:8px">
       <i data-lucide="shopping-cart" style="width:24px;height:24px;color:var(--color-dark)"></i>
       <span class="cart-badge" style="display:none">0</span>
     </button>
@@ -26,7 +26,7 @@
     </button>
   </div>
   
-  <ul class="nav-links md:hidden" role="menubar">
+  <ul class="nav-links" role="menubar">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/sample-kit.html">Order Sample Kit</a></li>
     <li><a href="/project-estimate.html">Request Bulk Quote</a></li>
@@ -34,3 +34,14 @@
   </ul>
 </nav>
 </div>
+
+<style>
+@media (min-width: 769px) {
+  .nav-links-mobile { display: none !important; }
+  .nav-links-desktop { display: flex !important; }
+}
+@media (max-width: 768px) {
+  .nav-links-desktop { display: none !important; }
+  .nav-links-mobile { display: flex !important; }
+}
+</style>
