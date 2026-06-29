@@ -1,7 +1,7 @@
 <div class="shopify-section-header">
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <a href="{{ shop.url | default: '/index.html' }}" class="logo">
-    {{ shop.name | default: 'TerraBond' }} <span>Outdoor</span>
+    TerraBond <span>Outdoor</span>
   </a>
   
   <div class="nav-links-desktop" style="display:flex;gap:32px;align-items:center">
@@ -39,9 +39,12 @@
 @media (min-width: 769px) {
   .nav-links-mobile { display: none !important; }
   .nav-links-desktop { display: flex !important; }
+  .nav-links { display: none !important; }
 }
 @media (max-width: 768px) {
   .nav-links-desktop { display: none !important; }
   .nav-links-mobile { display: flex !important; }
+  .nav-links { display: none; }
+  .nav-links.active { display: flex !important; }
 }
 </style>

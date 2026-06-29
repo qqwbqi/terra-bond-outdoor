@@ -1,7 +1,7 @@
 <section class="section" data-section-id="{{ section.id }}">
   <div class="two-col">
     <div>
-      <img src="{{ section.settings.image | default: 'https://images.unsplash.com/photo-1595841697258-00fc4884c785?w=800&q=80' }}" alt="Beautiful patio" />
+      <img src="{{ section.settings.image_url | default: 'https://images.unsplash.com/photo-1595841697258-00fc4884c785?w=800&q=80' }}" alt="Beautiful patio" />
     </div>
     <div>
       <h2>{{ section.settings.title | default: 'Professional Finish, Accessible Materials' }}</h2>
@@ -22,7 +22,7 @@
 {
   "name": "Use Cases (Two Column)",
   "settings": [
-    {"type": "image_picker", "id": "image", "label": "Image"},
+    {"type": "text", "id": "image_url", "label": "Image URL", "default": "https://images.unsplash.com/photo-1595841697258-00fc4884c785?w=800&q=80"},
     {"type": "text", "id": "title", "label": "Title", "default": "Professional Finish, Accessible Materials"},
     {"type": "textarea", "id": "text", "label": "Text", "default": "Whether you are a homeowner..."},
     {"type": "url", "id": "link", "label": "Link", "default": "/dealer-program.html"},
