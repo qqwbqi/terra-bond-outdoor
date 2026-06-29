@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Colors",
+    "settings": [
+      {"type": "color", "id": "color_background", "label": "Background Color", "default": "#FFFFFF"},
+      {"type": "color", "id": "color_sand", "label": "Sand Accent Color", "default": "#F0E5D8"},
+      {"type": "color", "id": "color_dark", "label": "Dark Background Color", "default": "#3A3A3A"},
+      {"type": "color", "id": "color_button", "label": "Button Color", "default": "#2D5A4A"},
+      {"type": "color", "id": "color_button_hover", "label": "Button Hover Color", "default": "#1E3D30"},
+      {"type": "color", "id": "color_accent", "label": "Accent Color", "default": "#B87333"},
+      {"type": "color", "id": "color_text", "label": "Text Color", "default": "#4A4A4A"},
+      {"type": "color", "id": "color_text_light", "label": "Light Text Color", "default": "#888888"},
+      {"type": "color", "id": "color_border", "label": "Border Color", "default": "#F0E5D8"},
+      {"type": "color", "id": "color_card", "label": "Card Background", "default": "#FFFFFF"}
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {"type": "font_picker", "id": "font_body", "label": "Body Font", "default": "helvetica_n4"},
+      {"type": "font_picker", "id": "font_heading", "label": "Heading Font", "default": "helvetica_n7"}
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {"type": "range", "id": "page_width", "label": "Page Width", "min": 800, "max": 1600, "step": 50, "default": 1100, "unit": "px"},
+      {"type": "range", "id": "border_radius", "label": "Border Radius", "min": 0, "max": 20, "step": 2, "default": 8, "unit": "px"}
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {"type": "link_list", "id": "menu", "label": "Main Menu", "default": "main-menu"},
+      {"type": "checkbox", "id": "sticky_header", "label": "Sticky Header", "default": true}
+    ]
+  },
+  {
+    "name": "Footer",
+    "settings": [
+      {"type": "link_list", "id": "footer_menu", "label": "Footer Menu", "default": "footer"},
+      {"type": "text", "id": "copyright_text", "label": "Copyright Text", "default": "Real bonded stone surfaces for patios, pool decks, and outdoor living spaces."}
+    ]
+  },
+  {
+    "name": "Products",
+    "settings": [
+      {"type": "product", "id": "sample_kit_product", "label": "Sample Kit Product"},
+      {"type": "product", "id": "diy_test_kit_product", "label": "DIY Test Kit Product"}
+    ]
+  }
+]

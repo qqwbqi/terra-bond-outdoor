@@ -1,0 +1,72 @@
+{
+  "general": {
+    "shop_name": "TerraBond Outdoor",
+    "shop_description": "Real bonded stone surfaces for patios, pool decks, and outdoor living spaces.",
+    "currency": "USD",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    }
+  },
+  "header": {
+    "menu": "Menu",
+    "cart": "Cart",
+    "search": "Search",
+    "account": "Account",
+    "close": "Close"
+  },
+  "footer": {
+    "shop": "Shop",
+    "support": "Support",
+    "company": "Company",
+    "legal": "Legal"
+  },
+  "product": {
+    "add_to_cart": "Add to Cart",
+    "buy_now": "Buy Now",
+    "sold_out": "Sold Out",
+    "unavailable": "Unavailable",
+    "quantity": "Quantity",
+    "price": "Price",
+    "compare_at_price": "Compare at",
+    "description": "Description",
+    "reviews": "Reviews"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continue_shopping": "Continue Shopping",
+    "remove": "Remove",
+    "update": "Update"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contact_info": "Contact Information",
+    "shipping_address": "Shipping Address",
+    "shipping_method": "Shipping Method",
+    "payment": "Payment",
+    "complete_order": "Complete Order",
+    "secure_checkout": "Secure checkout powered by Shopify"
+  },
+  "forms": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Submit",
+    "required": "Required",
+    "success": "Submitted successfully!",
+    "error": "Please check your entries and try again."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions"
+  },
+  "landing": {
+    "order_sample": "Order Sample Kit",
+    "request_quote": "Request Bulk Quote"
+  }
+}

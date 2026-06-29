@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ shop.locale | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page_title | default: shop.name }} | {{ shop.name }}</title>
+  <meta name="description" content="{{ page_description | default: 'Real bonded stone surfaces for patios, pool decks, and outdoor living spaces.' }}">
+  <link rel="stylesheet" href="{{ 'styles.css' | asset_url }}">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{{ 'scripts.js' | asset_url }}" defer></script>
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template | replace: '.', '-' }}">
+  {% section 'header' %}
+  
+  <main id="main-content" role="main">
+    {{ content_for_layout }}
+  </main>
+  
+  {% section 'footer' %}
+  {% section 'cart-drawer' %}
+  
+  {{ content_for_footer }}
+</body>
+</html>
